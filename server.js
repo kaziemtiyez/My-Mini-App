@@ -6,6 +6,8 @@ import { fileURLToPath } from "url";
 
 import userRoutes from "./routes/user.js";
 import referralRoutes from "./routes/referral.js";
+import withdrawRoutes from "./routes/withdraw.js";
+import adminRoutes from "./routes/admin.js";
 
 dotenv.config();
 
@@ -13,30 +15,19 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-
 const PORT = Number(process.env.PORT || 3000);
 
-const ADMIN_TELEGRAM_ID =
-  process.env.ADMIN_TELEGRAM_ID || "";
-
-const WITHDRAWAL_CHAT_ID =
-  process.env.WITHDRAWAL_CHAT_ID || "";
-
-app.use(
-  cors({
-    origin: true,
-    credentials: true
-  })
-);
+app.use(cors({
+  origin: true,
+  credentials: true
+}));
 
 app.use(express.json({ limit: "1mb" }));
 app.use(express.urlencoded({ extended: true }));
 
-app.use(
-  express.static(
-    path.join(__dirname, "public")
-  )
-);
+app.use(express.static(
+  path.join(__dirname, "public")
+));
 
 app.get("/api/status", (req, res) => {
   res.json({
@@ -62,6 +53,8 @@ app.get("/api/config", (req, res) => {
 
 app.use("/api/user", userRoutes);
 app.use("/api/referral", referralRoutes);
+app.use("/api/withdraw", withdrawRoutes);
+app.use("/api/admin", adminRoutes);
 
 app.get("/api/admin-info", (req, res) => {
   res.status(404).json({
@@ -79,11 +72,7 @@ app.get("/api/bot-token", (req, res) => {
 
 app.get("*", (req, res) => {
   res.sendFile(
-    path.join(
-      __dirname,
-      "public",
-      "index.html"
-    )
+    path.join(__dirname, "public", "index.html")
   );
 });
 
@@ -97,17 +86,21 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, "0.0.0.0", () => {
+  console.log("================================");
+  console.log(" Mini Dollar Earn");
+  console.log(" Server is running");
+  console.log("================================");
+  console.log(`Port: ${PORT}`);
   console.log(
-    `Mini Dollar Earn running on port ${PORT}`
+    "Bot configured:",
+    Boolean(process.env.BOT_TOKEN)
   );
-
   console.log(
-    "Admin security:",
-    Boolean(ADMIN_TELEGRAM_ID)
+    "Admin configured:",
+    Boolean(process.env.ADMIN_TELEGRAM_ID)
   );
-
   console.log(
     "Withdrawal channel configured:",
-    Boolean(WITHDRAWAL_CHAT_ID)
+    Boolean(process.env.WITHDRAWAL_CHAT_ID)
   );
 });
