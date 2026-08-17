@@ -1,11 +1,12 @@
 {
   "name": "telegram-mini-income-bot",
   "version": "1.0.0",
-  "description": "Telegram Mini App earning platform with AdsGram, Monetag, referrals and withdrawals",
+  "description": "Telegram Mini App earning dollar 💰 platform",
   "main": "server.js",
   "type": "module",
   "scripts": {
     "start": "node server.js",
+    "bot": "node bot/start.js",
     "dev": "node --watch server.js"
   },
   "keywords": [
@@ -16,7 +17,6 @@
     "earning",
     "referral"
   ],
-  "author": "",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
