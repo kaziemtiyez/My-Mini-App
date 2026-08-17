@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  >
+
+  <title>Mini Dollar Admin</title>
+
+  <link rel="stylesheet" href="/admin/admin.css">
+</head>
+
+<body>
+
+<div class="admin-app">
+
+  <header>
+    <h1>💰 Mini Dollar Admin</h1>
+    <span id="adminStatus">Checking...</span>
+  </header>
+
+  <section class="stats">
+
+    <div>
+      <small>Total Users</small>
+      <strong id="totalUsers">0</strong>
+    </div>
+
+    <div>
+      <small>Pending Withdrawals</small>
+      <strong id="pendingWithdrawals">0</strong>
+    </div>
+
+    <div>
+      <small>Total Paid</small>
+      <strong id="totalPaid">$0.00</strong>
+    </div>
+
+  </section>
+
+  <section class="panel">
+
+    <h2>Pending Withdrawals</h2>
+
+    <div id="withdrawals">
+      Loading...
+    </div>
+
+  </section>
+
+</div>
+
+<script src="/admin/admin.js"></script>
+
+</body>
+</html>
