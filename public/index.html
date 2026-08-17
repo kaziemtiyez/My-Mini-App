@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
 
   <meta
     name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    content="width=device-width,initial-scale=1,maximum-scale=1"
   >
 
   <title>Mini Dollar Earn</title>
@@ -13,132 +15,163 @@
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
   <link rel="stylesheet" href="/style.css">
+
 </head>
 
 <body>
 
-  <div id="app">
+<div id="app">
 
-    <header class="topbar">
-      <div>
-        <div class="brand">💰 Mini Dollar</div>
-        <div id="welcome">Welcome</div>
+  <header class="topbar">
+
+    <div>
+      <div class="brand">
+        💰 Mini Dollar
       </div>
 
-      <div class="avatar" id="avatar">U</div>
-    </header>
+      <div id="welcome">
+        Welcome
+      </div>
+    </div>
 
-    <main>
+    <div
+      class="avatar"
+      id="avatar"
+    >
+      U
+    </div>
 
-      <section class="balance-card">
-        <span>Available Balance</span>
+  </header>
 
-        <strong id="balance">
-          $0.00
-        </strong>
+  <main>
 
-        <small>USD</small>
-      </section>
+    <section class="balance-card">
 
-      <section class="stats">
+      <span>
+        Available Balance
+      </span>
 
-        <div class="stat-card">
-          <span>👥 Referrals</span>
-          <strong id="referrals">0</strong>
-        </div>
+      <strong id="balance">
+        $0.00
+      </strong>
 
-        <div class="stat-card">
-          <span>🎯 Ads Today</span>
-          <strong id="adsToday">0</strong>
-        </div>
+      <small>
+        USD
+      </small>
 
-      </section>
+    </section>
 
-      <section class="earn-card">
+    <section class="stats">
 
-        <h2>Earn Money</h2>
+      <div class="stat-card">
+        <span>👥 Referrals</span>
+        <strong id="referrals">0</strong>
+      </div>
 
-        <button
-          class="earn-button"
-          id="adsgramButton"
-        >
-          🟡 Watch AdsGram
-          <span>15 Ads</span>
-        </button>
+      <div class="stat-card">
+        <span>🎯 Ads Today</span>
+        <strong id="adsToday">0</strong>
+      </div>
 
-        <button
-          class="earn-button"
-          id="monetagButton"
-        >
-          🟡 Watch Monetag
-          <span>10 Ads</span>
-        </button>
+    </section>
 
-      </section>
+    <section class="earn-card">
 
-      <section class="content-card">
+      <h2>
+        Earn Money
+      </h2>
 
-        <h2>Quick Menu</h2>
-
-        <div class="menu-grid">
-
-          <button data-page="referral">
-            👥 Referral
-          </button>
-
-          <button data-page="leaderboard">
-            🏆 Leaderboard
-          </button>
-
-          <button data-page="withdraw">
-            💳 Withdraw
-          </button>
-
-          <button data-page="history">
-            📊 History
-          </button>
-
-        </div>
-
-      </section>
-
-      <section
-        id="pageContent"
-        class="content-card"
+      <button
+        class="earn-button"
+        id="adsgramButton"
       >
-        <h2>Dashboard</h2>
-        <p>Watch ads and earn rewards.</p>
-      </section>
-
-    </main>
-
-    <nav class="bottom-nav">
-
-      <button data-page="home">
-        🏠
-        <span>Home</span>
+        🟡 Watch AdsGram
+        <span>15/day</span>
       </button>
 
-      <button data-page="earn">
-        💰
-        <span>Earn</span>
+      <button
+        class="earn-button"
+        id="monetagButton"
+      >
+        🟡 Watch Monetag
+        <span>10/day</span>
       </button>
 
-      <button data-page="referral">
-        👥
-        <span>Refer</span>
-      </button>
+    </section>
 
-      <button data-page="profile">
-        👤
-        <span>Profile</span>
-      </button>
+    <section class="content-card">
 
-    </nav>
+      <h2>
+        Quick Menu
+      </h2>
 
-  </div>
+      <div class="menu-grid">
 
-  <script src="/app.js"></script>
+        <button data-page="referral">
+          👥 Referral
+        </button>
+
+        <button data-page="leaderboard">
+          🏆 Leaderboard
+        </button>
+
+        <button data-page="withdraw">
+          💳 Withdraw
+        </button>
+
+        <button data-page="history">
+          📊 History
+        </button>
+
+      </div>
+
+    </section>
+
+    <section
+      id="pageContent"
+      class="content-card"
+    >
+
+      <h2>
+        Dashboard
+      </h2>
+
+      <p>
+        Watch verified ads and earn rewards.
+      </p>
+
+    </section>
+
+  </main>
+
+  <nav class="bottom-nav">
+
+    <button data-page="home">
+      🏠
+      <span>Home</span>
+    </button>
+
+    <button data-page="earn">
+      💰
+      <span>Earn</span>
+    </button>
+
+    <button data-page="referral">
+      👥
+      <span>Refer</span>
+    </button>
+
+    <button data-page="profile">
+      👤
+      <span>Profile</span>
+    </button>
+
+  </nav>
+
+</div>
+
+<script src="/app.js"></script>
 
 </body>
+
 </html>
