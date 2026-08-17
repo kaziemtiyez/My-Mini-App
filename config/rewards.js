@@ -1,21 +1,19 @@
-export const rewardConfig = {
-  currency: "USD",
-
+export const rewards = {
   adsgram: {
-    rewardPerAd: 0.20,
-    dailyLimit: 15
+    reward: 0.20,
+    dailyLimit: 15,
+    cooldownSeconds: 3
   },
 
   monetag: {
-    rewardPerAd: 0.20,
-    dailyLimit: 10
+    reward: 0.20,
+    dailyLimit: 10,
+    cooldownSeconds: 3
   },
 
   referral: {
-    rewardPerReferral: 0.50
+    reward: 1.50
   },
 
-  withdrawal: {
-    minimum: 10
-  }
+  minimumWithdrawal: 10
 };
