@@ -1,0 +1,47 @@
+let adsgramController = null;
+
+export function initAdsGram(blockId) {
+
+  if (!blockId) {
+    console.error(
+      "AdsGram Block ID missing"
+    );
+
+    return false;
+  }
+
+  if (!window.Adsgram) {
+    console.error(
+      "AdsGram SDK not loaded"
+    );
+
+    return false;
+  }
+
+  adsgramController =
+    window.Adsgram.init({
+      blockId
+    });
+
+  return true;
+}
+
+export async function showAdsGram() {
+
+  if (!adsgramController) {
+    throw new Error(
+      "AdsGram is not initialized"
+    );
+  }
+
+  const result =
+    await adsgramController.show();
+
+  if (!result?.done) {
+    throw new Error(
+      "Ad was not completed"
+    );
+  }
+
+  return true;
+}
