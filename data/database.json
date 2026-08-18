@@ -1,0 +1,13 @@
+{
+  "users": [],
+  "tasks": [
+    {
+      "id": "daily-checkin",
+      "title": "Daily Check-in",
+      "description": "Check in once every day",
+      "reward": 10,
+      "active": true
+    }
+  ],
+  "withdrawals": []
+}
